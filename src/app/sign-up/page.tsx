@@ -18,7 +18,7 @@ const schema = Yup.object().shape({
 export default function SignUp() {
   const formik = useFormik({
     initialValues: {
-      roleId: "US",
+      roleId: "1",
       email: "",
       password: "",
       confirmPassword: "",
@@ -54,24 +54,24 @@ export default function SignUp() {
                     Role
                   </label>
                   <select
-                    defaultValue={"US"}
+                    defaultValue={"1"}
                     value={values?.roleId}
                     onChange={handleChange}
                     id="roleId"
                     name="roleId"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   >
-                    <option value="US" key="US" selected>
-                      United States
+                    <option value="1" key="1" selected>
+                      Role 1
                     </option>
-                    <option value="CA" key="CA">
-                      Canada
+                    <option value="2" key="2">
+                      Role 2
                     </option>
-                    <option value="FR" key="FR">
-                      France
+                    <option value="3" key="3">
+                      Role 3
                     </option>
-                    <option value="DE" key="DE">
-                      Germany
+                    <option value="4" key="4">
+                      Role 4
                     </option>
                   </select>
                 </div>
