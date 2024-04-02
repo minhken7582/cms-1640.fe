@@ -14,7 +14,7 @@ export default function NotFound404() {
         <div className="my-2 mt-10">
           <a
             href="/"
-            className="block sm:w-full lg:w-[200px] my-2 md py-2.5 px-8 text-center text-white bg-[#000] rounded-[8px]"
+            className="block sm:w-full lg:w-[200px] my-2 md py-2.5 px-8 text-center text-white bg-[#ef9d00] rounded-[8px]"
           >
             Trang chủ
           </a>
