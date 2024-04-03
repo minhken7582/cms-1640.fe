@@ -4,10 +4,19 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { MenuItems } from "@/constants";
 import { usePathname } from "next/navigation";
+import { signOut } from "next-auth/react";
 
-export default function Header() {
+export default function Header({
+  session,
+}: Readonly<{
+  session?: any;
+}>) {
   const pathname = usePathname();
   const [openUserMenu, setOpenUserMenu] = useState(false);
+
+  const handleSignOut = () => {
+    signOut();
+  };
 
   return (
     <>
@@ -35,7 +44,11 @@ export default function Header() {
               data-dropdown-toggle="user-dropdown"
               data-dropdown-placement="bottom"
               onClick={() => setOpenUserMenu(!openUserMenu)}
-              onBlur={() => setOpenUserMenu(false)}
+              onBlur={() =>
+                setTimeout(() => {
+                  setOpenUserMenu(false);
+                }, 1000)
+              }
             >
               <span className="sr-only">Open user menu</span>
               <Image
@@ -47,7 +60,7 @@ export default function Header() {
               />
 
               <span className="text-sm text-gray-900 ml-2 dark:text-white hidden lg:block">
-                Hi, Bonnie Green
+                {session?.user?.name || session?.user?.email || ""}
               </span>
             </button>
 
@@ -60,21 +73,22 @@ export default function Header() {
             >
               <div className="px-4 py-3">
                 <span className="block text-sm text-gray-900 dark:text-white">
-                  Bonnie Green
+                  {session?.user?.name || "Hi"}
                 </span>
                 <span className="block text-sm  text-gray-500 truncate dark:text-gray-400">
-                  name@email.com
+                  {session?.user?.email || ""}
                 </span>
               </div>
 
-              <ul className="py-2" aria-labelledby="user-menu-button">
+              <ul className="py-0" aria-labelledby="user-menu-button">
                 <li>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                  <button
+                    type="button"
+                    className="block w-full text-start cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                    onClick={() => handleSignOut()}
                   >
                     Sign out
-                  </a>
+                  </button>
                 </li>
               </ul>
             </div>

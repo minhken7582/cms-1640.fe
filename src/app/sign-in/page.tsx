@@ -4,6 +4,8 @@ import React, { useState, FormEvent } from "react";
 import Image from "next/image";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const schema = Yup.object().shape({
   email: Yup.string().required().email(),
@@ -11,6 +13,7 @@ const schema = Yup.object().shape({
 });
 
 export default function SignIn() {
+  const router = useRouter();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -18,7 +21,16 @@ export default function SignIn() {
     },
     validationSchema: schema,
     onSubmit: async ({ email, password }) => {
-      console.log("submit", email, password);
+      const response: any = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
+
+      if (!response?.error) {
+        router.push("/");
+        router.refresh();
+      }
     },
   });
 
