@@ -54,13 +54,13 @@ export default function Event() {
                   </td>
                   <td className="px-6 py-4 text-right">
                     <a
-                      href="#"
+                      href="/web/student/submit"
                       className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                     >
                       Submit
                     </a>
                     <a
-                      href="#"
+                      href="/web/student/submit"
                       className="ml-5 font-medium text-blue-600 dark:text-blue-500 hover:underline"
                     >
                       Edit
