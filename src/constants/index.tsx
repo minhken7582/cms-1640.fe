@@ -49,12 +49,17 @@ export const MenuItems = [
   // Coordinator
   {
     name: "Contributions",
+    url: "/web/coordinator/contributions",
+    roleId: "coordinator",
+  },
+  {
+    name: "Event",
     url: "/web/coordinator/event",
     roleId: "coordinator",
   },
   {
     name: "Selected contribution",
-    url: "/web/coordinator/selected",
+    url: "/web/coordinator/selected-contributions",
     roleId: "coordinator",
   },
   // Guest

@@ -5,32 +5,28 @@ import MainLayout from "@/components/MainLayout";
 import InputDatepicker from "@/components/InputDatepicker";
 import dayjs from "dayjs";
 
-export default function Event() {
+export default function SelectedContributions() {
   return (
     <MainLayout>
       <section className="bg-gray-50 dark:bg-gray-900">
         <h1 className="text-xl font-medium leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white mb-5">
-          List of event
+          Selected contributions
         </h1>
 
         <div className="relative overflow-x-auto border shadow-md sm:rounded-lg">
-          <div className="md:w-1/3 m-5">
-            <InputDatepicker value={""} onChange={() => {}} />
-          </div>
-
           <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 <th scope="col" className="px-6 py-3">
-                  Event
+                  Contribution
                 </th>
                 <th scope="col" className="px-6 py-3">
-                  First closure date
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  Final closure date
+                  Student
                 </th>
                 <th scope="col" className="px-6 py-3"></th>
+                <th scope="col" className="px-6 py-3">
+                  Select
+                </th>
               </tr>
             </thead>
 
@@ -46,19 +42,34 @@ export default function Event() {
                   >
                     Apple MacBook Pro 17
                   </th>
+                  <td className="px-6 py-4">John Doe</td>
                   <td className="px-6 py-4">
-                    {dayjs(new Date()).format("DD/MM/YYYY")}
-                  </td>
-                  <td className="px-6 py-4">
-                    {dayjs(new Date()).format("DD/MM/YYYY")}
-                  </td>
-                  <td className="px-6 py-4 text-right">
                     <a
                       href="/web/coordinator/comment"
                       className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                     >
-                      View
+                      Comment
                     </a>
+
+                    <a
+                      href="/web/coordinator/chat"
+                      className="font-medium text-blue-600 dark:text-blue-500 hover:underline ml-3"
+                    >
+                      Chat
+                    </a>
+                  </td>
+                  <td className="px-6 py-4 text-right">
+                    <div className="flex items-center">
+                      <input
+                        checked
+                        id={`checked-checkbox-${index}`}
+                        name={`checked-checkbox-${index}`}
+                        type="checkbox"
+                        value=""
+                        onChange={() => {}}
+                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      />
+                    </div>
                   </td>
                 </tr>
               ))}
