@@ -25,11 +25,11 @@ export const MenuItems = [
     url: "/web/student/event",
     roleId: "student",
   },
-  {
-    name: "View all contribution",
-    url: "/web/student/system",
-    roleId: "student",
-  },
+  // {
+  //   name: "View all contribution",
+  //   url: "/web/student/system",
+  //   roleId: "student",
+  // },
   {
     name: "Student profile",
     url: "/web/student/profile",
