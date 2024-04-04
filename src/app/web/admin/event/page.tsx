@@ -4,6 +4,7 @@ import React, { useState, FormEvent } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import MainLayout from "@/components/MainLayout";
+import InputDatepicker from "@/components/InputDatepicker";
 
 const schema = Yup.object().shape({
   name: Yup.string().required(),
@@ -55,6 +56,34 @@ export default function CreateEvent() {
 
                   {errors?.name && touched?.name && (
                     <span className="text-red-500 text-sm">{errors?.name}</span>
+                  )}
+                </div>
+
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    First closure date
+                  </label>
+
+                  <InputDatepicker value={new Date()} onChange={handleChange} />
+
+                  {errors?.firstDate && touched?.firstDate && (
+                    <span className="text-red-500 text-sm">
+                      {errors?.firstDate}
+                    </span>
+                  )}
+                </div>
+
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Final closure date
+                  </label>
+
+                  <InputDatepicker value={new Date()} onChange={handleChange} />
+
+                  {errors?.finalDate && touched?.finalDate && (
+                    <span className="text-red-500 text-sm">
+                      {errors?.finalDate}
+                    </span>
                   )}
                 </div>
 
