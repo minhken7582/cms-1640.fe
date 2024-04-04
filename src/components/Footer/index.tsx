@@ -18,7 +18,9 @@ export default function Footer({
         </span>
 
         <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-          {MenuItems.map((item, index) => (
+          {MenuItems.filter(
+            (n) => n?.roleId === session?.user?.email.split("@gmail.com")[0]
+          ).map((item, index) => (
             <li key={index}>
               <a href={item?.url} className={"hover:underline me-4 md:me-6"}>
                 {item?.name}

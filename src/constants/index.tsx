@@ -17,7 +17,7 @@ export const MenuItems = [
   {
     name: "Create annual event",
     url: "/web/admin/event",
-    roleId: "admin ",
+    roleId: "admin",
   },
   // Student
   {
@@ -54,7 +54,7 @@ export const MenuItems = [
   },
   {
     name: "Selected contribution",
-    url: "/web/manager/selected",
+    url: "/web/coordinator/selected",
     roleId: "coordinator",
   },
   // Guest
