@@ -9,7 +9,7 @@ export default async function App() {
   const session = await getServerSession();
 
   if (!session) {
-    return redirect("/sign-in");
+    return redirect("/auth/sign-in");
   }
 
   return (
@@ -18,7 +18,7 @@ export default async function App() {
 
       <HomePage />
 
-      <Footer />
+      <Footer session={session} />
     </>
   );
 }

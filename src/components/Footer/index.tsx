@@ -1,7 +1,11 @@
 import Image from "next/image";
 import { MenuItems } from "@/constants";
 
-export default function Header() {
+export default function Footer({
+  session,
+}: Readonly<{
+  session?: any;
+}>) {
   return (
     <footer className="bg-white dark:bg-gray-800">
       <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
