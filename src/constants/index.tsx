@@ -59,7 +59,7 @@ export const MenuItems = [
   },
   // Guest
   {
-    name: "View selected report",
+    name: "View selected contributions",
     url: "/web/guest/event",
     roleId: "guest",
   },
