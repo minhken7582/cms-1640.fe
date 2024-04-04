@@ -13,7 +13,7 @@ export default function Header() {
   const [openUserMenu, setOpenUserMenu] = useState(false);
 
   const handleSignOut = () => {
-    signOut();
+    signOut({ callbackUrl: "/auth/sign-in" });
   };
 
   return (

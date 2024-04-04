@@ -23,6 +23,7 @@ export default function InputDatepicker({ value, onChange }: PropsType) {
       showIcon
       selected={date}
       onChange={handleDateFilterChange}
+      placeholderText="Select date"
       className="border rounded-lg text-sm w-full"
     />
   );
