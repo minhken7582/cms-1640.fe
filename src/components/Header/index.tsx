@@ -5,12 +5,10 @@ import Image from "next/image";
 import { MenuItems } from "@/constants";
 import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
-export default function Header({
-  session,
-}: Readonly<{
-  session?: any;
-}>) {
+export default function Header() {
+  const { data: session } = useSession();
   const pathname = usePathname();
   const [openUserMenu, setOpenUserMenu] = useState(false);
 

@@ -1,8 +1,9 @@
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { generateObjectId } from "@/utils";
+import { NextAuthOptions } from "next-auth";
 
-const handler = NextAuth({
+const OPTIONS: NextAuthOptions = {
   session: {
     strategy: "jwt",
   },
@@ -36,10 +37,14 @@ const handler = NextAuth({
 
   callbacks: {
     session({ session, token, user }) {
-      session.user.roleId = user.roleId;
+      session.user.roleId = user?.roleId;
       return session;
     },
   },
-});
+};
+
+export { OPTIONS };
+
+const handler = NextAuth(OPTIONS);
 
 export { handler as GET, handler as POST };

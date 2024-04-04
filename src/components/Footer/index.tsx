@@ -1,11 +1,11 @@
-import Image from "next/image";
-import { MenuItems } from "@/constants";
+"use client";
 
-export default function Footer({
-  session,
-}: Readonly<{
-  session?: any;
-}>) {
+import { MenuItems } from "@/constants";
+import { useSession } from "next-auth/react";
+
+export default function Footer() {
+  const { data: session } = useSession();
+
   return (
     <footer className="bg-white dark:bg-gray-800">
       <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
