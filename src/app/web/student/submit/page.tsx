@@ -170,7 +170,7 @@ export default function Submit() {
                       </p>
                     ) : (
                       <p className="text-sm text-center">
-                        Drag 'n' drop some files here, or click to select files
+                        Drag drop some files here, or click to select files
                       </p>
                     )}
                   </div>
