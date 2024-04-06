@@ -7,7 +7,7 @@ export default function Error500() {
     <div className="bg-[#ffffff] min-h-screen lg:px-24 lg:py-24 md:py-10 md:px-44 px-4 items-center flex justify-center flex-col-reverse lg:flex-row md:gap-28 gap-16">
       <div className="w-full xl:w-1/2 relative pb-12 lg:pb-0">
         <h1 className="my-2 text-gray-800 font-bold text-2xl">
-          Ối. Lỗi server.
+          Ối. Lỗi server.s
         </h1>
         <p className="my-2 text-gray-800">
           Đừng lo, đây không phải lỗi của bạn. Chúng tôi sẽ khắc phục sớm nhất
